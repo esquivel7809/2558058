@@ -2,7 +2,7 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
-	usuario: /^\d{7,11}$/, 
+	ficha: /^\d{7,11}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
@@ -11,7 +11,7 @@ const expresiones = {
 }
 
 const campos = {
-	usuario: false,
+	ficha: false,
 	nombre: false,
 	password: false,
 	correo: false
@@ -21,8 +21,8 @@ const campos = {
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
-		case "usuario":
-			validarCampo(expresiones.usuario, e.target, 'usuario');
+		case "ficha":
+			validarCampo(expresiones.ficha, e.target, 'ficha');
 		break;
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
@@ -90,17 +90,17 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
-		var doc = document.getElementById('usuario').value;
+		var fic = document.getElementById('ficha').value;
 		var nom = document.getElementById('nombre').value;
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+	if(campos.ficha && campos.nombre && campos.password && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(fic);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{fic: fic, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
