@@ -28,7 +28,7 @@
                             <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="">
+                        <p class="formulario__mensaje">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
@@ -95,14 +95,14 @@
                 </div>
 
 			<div class="formulario_mensaje" id="">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+				<p class="formulario__mensaje"><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
             <p class="text-center">
                       
             <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="" id="">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje" id="">Formulario enviado exitosamente!</p>
             </div>
                 
         
