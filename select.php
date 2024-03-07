@@ -17,7 +17,7 @@
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="" id="">
+        <form  method="POST" autocomplete="off" class="formulario" id="">
             
 
                 <!-- div para capturar el documento -->
@@ -28,17 +28,17 @@
                             <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="">
+                        <p class="formulario__label">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
                 <!-- div para capturar el nombre -->
 
-                <div class="formulario" id="formulario">
+                <div class="formulario__grupo-input" id="formulario">
                     <label for="trans" class="formulario__label">Transversal *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="trans" id="trans" required>
-                                <option value="" selected="">** Seleccione Transversal **</option>
+                            <select class="formulario__select" name="trans" id="trans" required>
+                                <option value="id_transv" selected="">** Seleccione Transversal **</option>
                                     <?php
                                         /*Consulta para mostrar las opciones en el select */
                                         $statement = $con->prepare('SELECT * FROM transversal');
@@ -53,25 +53,40 @@
                 </div>
 
                                                     
-                <div class="formulario" id="formulario">
+                <div class="formulario__grupo-input" id="formulario">
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="docum" id="docum" required>
+                            <select class="formulario__select" name="doc" id="doc" required>
                                 <option value="" selected="">** Seleccione Instructor **</option>
-                                
+                                <?php
+                                        /*Consulta para mostrar las opciones en el select */
+                                        $statement = $con->prepare('SELECT * FROM user');
+                                        $statement->execute();
+                                        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                                          echo "<option value=" . $row['doc'] . ">"  . $row['name'] . "</option>";
+                                        }
+                                    ?>
                             </select>
                         </div>
                 </div>
                 </div>                 
                 <!-- Grupo: Contraseña 2 -->
-                <div class="formulario__grupo-input" id="">
+                <div class="formulario__grupo-input" id="formulario">
                     <div class="conte" id="select3lista">
                         <label for="id_com" class="formulario__label">Competencia *</label>
                             <div class="formulario__grupo-select">
                                 <select class="formulario__select" name="id_com" id="id_com" required>
                                     <option value="formulario_select" selected="">** Seleccione Competencia **</option>
-                                    
+                                    <?php
+                                        /*Consulta para mostrar las opciones en el select */
+                                        $statement = $con->prepare('SELECT competencia.id_compe, competencia.competencia FROM competencia INNER JOIN transversal ON transversal.id_transv = competencia.id_transv WHERE competencia.id_transv = "id_transv" ORDER BY competencia.competencia');
+                                        $statement->execute();
+                                        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                                          echo "<option value=" . $row['id_transv'] . ">"  . $row['competencia'] . "</option>";
+                                        }
+                                        
+                                    ?>    
 
                                 </select>
                             </div>
@@ -98,7 +113,7 @@
                 
               
 
-			<div class="" id="">
+			<div class="formulario__input-error" id="">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
@@ -106,7 +121,7 @@
                       
             <div class="formulario__grupo-input formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="" id="">Formulario enviado exitosamente!</p>
+                <p class="formulario__validacion-estado" id="">Formulario enviado exitosamente!</p>
             </div>
                 
         
@@ -143,7 +158,7 @@
 
 <!-- este script nos muestra la competencia de acuerdo a la transversal -->
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(doc).ready(function(){
 		$('#trans').val(0);
 		recargarLista1();
 
