@@ -37,7 +37,7 @@
                 <div class="" id="">
                     <label for="trans" class="formulario__label">Transversal *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="trans" id="trans" required>
+                            <select class="formulario__select" name="trans" id="trans" required>
                                 <option value="" selected="">** Seleccione Transversal **</option>
                                     <?php
                                         /*Consulta para mostrar las opciones en el select */
