@@ -34,7 +34,7 @@
 
                 <!-- div para capturar el nombre -->
 
-                <div class="" id="">
+                <div class="formulario__grupo-select" id="formulario__grupo-select">
                     <label for="trans" class="formulario__label">Transversal *</label>
                         <div class="formulario__grupo-select">
                             <select class="formulario__select" name="trans" id="trans" required>
@@ -53,7 +53,7 @@
                 </div>
 
                                                     
-                <div class="formulario__grupo-select" id="formulario__grupo-select">
+                <div class="formulario__grupo" id="formulario__grupo">
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
