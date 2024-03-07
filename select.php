@@ -17,27 +17,27 @@
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="" id="">
+        <form  method="POST" autocomplete="off" class="formulario" id="">
             
 
                 <!-- div para capturar el documento -->
 
-                <div class="" id="">
+                <div class="formulario__grupo" id="">
                     <label for="usuario" class="formulario__label">Ficha *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="">
+                        <p class="formulario__input-error">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
                 <!-- div para capturar el nombre -->
 
-                <div class="" id="">
+                <div class="formulario__grupo" id="">
                     <label for="trans" class="formulario__label">Transversal *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="trans" id="trans" required>
+                            <select class="formulario__select" name="trans" id="trans" required>
                                 <option value="" selected="">** Seleccione Transversal **</option>
                                     <?php
                                         /*Consulta para mostrar las opciones en el select */
@@ -53,11 +53,11 @@
                 </div>
 
                                                     
-                <div class="" id="">
+                <div class="formulario__grupo" id="">
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="docum" id="docum" required>
+                            <select class="formulario__select" name="docum" id="docum" required>
                                 <option value="" selected="">** Seleccione Transversal **</option>
                                 
                             </select>
@@ -98,7 +98,7 @@
                 
               
 
-			<div class="" id="">
+			<div class="formulario__mensaje" id="">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
@@ -106,7 +106,7 @@
                       
             <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="" id="">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje-exito" id="">Formulario enviado exitosamente!</p>
             </div>
                 
         
