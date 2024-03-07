@@ -81,21 +81,21 @@
 
                 <div class="formulario__grupo" id="grupo__telefono">
                     <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
-				    <div class="formulario__grupo-select">                 
+				    <div class="formulario__grupo-select">
                         <select  name="id_tip_use" id="id_tip_use" class="formulario__select" required>
                             <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
                                 <?php
                                    /*Consulta para mostrar las opciones en el select */
-                                    $statement = $con->prepare('SELECT * from tip_use WHERE id_tip_use = 1');
+                                    $statement = $con->prepare('SELECT * from tip_use');
                                     $statement->execute();
                                     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                                      echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
+                                        echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
                                     }
                                 ?>
                         </select>
                     </div>
                     
-                </div>  
+                </div>
 
                 
                 <!-- Grupo: Terminos y Condiciones -->
@@ -111,7 +111,6 @@
 			</div>
             
             <p class="text-center">
-                      
             <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
@@ -119,9 +118,9 @@
                 
         
         </form>
-   </main>
-   <script src="js/jquery.js"></script>
-   <script src="js/formulario.js"></script>
+</main>
+<script src="js/jquery.js"></script>
+<script src="js/formulario.js"></script>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
     <!--  Javascript funcion para convertor en mayusculas y minusculas -->

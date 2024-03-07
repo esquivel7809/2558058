@@ -1,6 +1,8 @@
+//taer los datos de los formularios
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
+//son las limitaciones o condiciones que tiene cada espacio o cada input
 const expresiones = {
 	usuario: /^\d{7,11}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
@@ -9,7 +11,7 @@ const expresiones = {
 	// telefono: /^\d{7,14}$/ 
 	
 }
-
+//evita que se puedan enviar datos falsos o vacios, solo se ponen true cuando se cumplan las anteriores condiciones
 const campos = {
 	usuario: false,
 	nombre: false,
@@ -18,7 +20,8 @@ const campos = {
 	// telefono: false
 	
 }
-
+ //la "e" significa evento
+ //
 const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "usuario":
@@ -43,6 +46,7 @@ const validarFormulario = (e) => {
 		
 	}
 }
+//remover advertencias o estilos aplicados por las condiciones dadas(si estas condiciones se cumplen)
 
 const validarCampo = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
@@ -87,7 +91,7 @@ inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
 });
-
+//
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 		var doc = document.getElementById('usuario').value;
@@ -95,9 +99,11 @@ formulario.addEventListener('submit', (e) => {
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
-
+	// aqui se validan si los valores cumplen todas las condiciones y se comparan
+	//tambien se muestrasn en consola todos los datos recibidos y se envian a el archivo registro
 	const terminos = document.getElementById('terminos');
 	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+		//resetea el formulario
 		formulario.reset();
 		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
 		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
