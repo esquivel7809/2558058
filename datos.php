@@ -9,7 +9,7 @@
     $sql="SELECT user.doc, user.name FROM asig_transv 
     INNER JOIN user ON asig_transv.doc_trans = user.doc 
     INNER JOIN transversal ON asig_transv.id_transv = transversal.id_transv 
-    WHERE user.id_tip_user = 3 
+    WHERE user.id_tip_user = 2
     AND transversal.id_transv = '$trans'
     ORDER BY transversal.transversal ";
 

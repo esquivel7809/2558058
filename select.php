@@ -12,12 +12,12 @@
 	<title>Validación de Formulario con Javascript</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="../css/css.css">
+	<link rel="stylesheet" href="css/css.css">
 </head>
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="" id="">
+        <form  method="POST" autocomplete="off" class="formulario" id="">
             
 
                 <!-- div para capturar el documento -->
@@ -28,7 +28,7 @@
                             <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="">
+                        <p class="formulario__mensaje">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
@@ -57,8 +57,8 @@
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="docum" id="docum" required>
-                                <option value="" selected="">** Seleccione Transversal **</option>
+                            <select class="formulario__select" name="docum" id="docum" required>
+                                <option value="" selected="">** Seleccione instructor **</option>
                                 
                             </select>
                         </div>
@@ -80,7 +80,7 @@
         
 
                 <!-- Grupo: Correo Electronico -->
-                <div class="formulario__grupo" id="grupo__correo">
+                <div class="" id="grupo__correo">
                     <label for="correo" class="formulario__label">Horario *</label>
                     <div class="formulario__grupo-select">
                                 <select class="formulario__select" name="trans" id="trans" required>
@@ -98,7 +98,7 @@
                 
               
 
-			<div class="" id="">
+			<div class="formulario__mensaje" id="">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
@@ -106,7 +106,7 @@
                       
             <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="" id="">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje-exito" id="">Formulario enviado exitosamente!</p>
             </div>
                 
         
