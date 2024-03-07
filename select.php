@@ -12,17 +12,17 @@
 	<title>Validación de Formulario con Javascript</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="../css/css.css">
+	<link rel="stylesheet" href="css/css.css">
 </head>
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="" id="">
+        <form  method="POST" autocomplete="off" class="formulario" id="">
             
 
                 <!-- div para capturar el documento -->
 
-                <div class="" id="">
+                <div class="formulario__grupo" id="">
                     <label for="usuario" class="formulario__label">Ficha *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
@@ -34,10 +34,10 @@
 
                 <!-- div para capturar el nombre -->
 
-                <div class="" id="">
+                <div class="formulario__grupo" id="">
                     <label for="trans" class="formulario__label">Transversal *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="trans" id="trans" required>
+                            <select class="formulario__select" name="trans" id="trans" required>
                                 <option value="" selected="">** Seleccione Transversal **</option>
                                     <?php
                                         /*Consulta para mostrar las opciones en el select */
@@ -53,11 +53,11 @@
                 </div>
 
                                                     
-                <div class="" id="">
+                <div class="formulario_grupo" id="">
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="docum" id="docum" required>
+                            <select class="formulario__select" name="docum" id="docum" required>
                                 <option value="" selected="">** Seleccione Transversal **</option>
                                 
                             </select>
@@ -67,7 +67,7 @@
                 <!-- Grupo: Contraseña 2 -->
                 <div class="formulario__grupo" id="">
                     <div class="conte" id="select3lista">
-                        <label for="id_com" class="formulario__label">Competencia *</label>
+                        <label for="id_com" class="formulario__label">Competencia*</label>
                             <div class="formulario__grupo-select">
                                 <select class="formulario__select" name="id_com" id="id_com" required>
                                     <option value="" selected="">** Seleccione Competencia **</option>
@@ -94,11 +94,7 @@
                     
                 </div>
 
-                
-                
-              
-
-			<div class="" id="">
+			<div class="formulario_mensaje" id="">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
