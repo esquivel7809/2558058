@@ -37,7 +37,7 @@
                 <div class="" id="">
                     <label for="trans" class="formulario__label">Transversal *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="trans" id="trans" required>
+                            <select class="formulario__select" name="trans" id="trans" required>
                                 <option value="" selected="">** Seleccione Transversal **</option>
                                     <?php
                                         /*Consulta para mostrar las opciones en el select */
@@ -57,7 +57,7 @@
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
-                            <select class="" name="docum" id="docum" required>
+                            <select class="formulario__select" name="docum" id="docum" required>
                                 <option value="" selected="">** Seleccione Transversal **</option>
                                 
                             </select>
@@ -65,7 +65,7 @@
                 </div>
                 </div>                  
                 <!-- Grupo: Contraseña 2 -->
-                <div class="formulario__grupo" id="">
+                <div class="formulario__grupo" id="formulario__grupo">
                     <div class="conte" id="select3lista">
                         <label for="id_com" class="formulario__label">Competencia *</label>
                             <div class="formulario__grupo-select">
