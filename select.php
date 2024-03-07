@@ -23,44 +23,43 @@
 
             <!-- div para capturar el documento -->
 
-            <div class="" id="">
+            <div class="formulario__grupo" id="">
                 <label for="usuario" class="formulario__label">Ficha *</label>
                 <div class="formulario__grupo-input">
                     <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
-                <p class="">
+                <p class="formulario__mensaje">
                     El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
             </div>
 
             <!-- div para capturar el nombre -->
 
-            <div class="" id="">
+            <div class="formulario__grupo" id="">
                 <label for="trans" class="formulario__label">Transversal *</label>
                 <div class="formulario__grupo-select">
-                    <select class="" name="trans" id="trans" required>
+                    <select class="formulario__select" name="trans" id="trans" required>
                         <option value="" selected="">** Seleccione Transversal **</option>
                         <?php
-                                        /*Consulta para mostrar las opciones en el select */
-                                        $statement = $con->prepare('SELECT * FROM transversal');
-                                        $statement->execute();
-                                        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                                          echo "<option value=" . $row['id_transv'] . ">"  . $row['transversal'] . "</option>";
-                                        }
-                                    ?>
+                            /*Consulta para mostrar las opciones en el select */
+                            $statement = $con->prepare('SELECT * FROM transversal');
+                            $statement->execute();
+                            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                            echo "<option value=" . $row['id_transv'] . ">"  . $row['transversal'] . "</option>";
+                            }
+                        ?>
                     </select>
                 </div>
 
             </div>
 
 
-            <div class="" id="">
+            <div class="formulario__grupo" id="">
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                     <div class="formulario__grupo-select">
-                        <select class="" name="docum" id="docum" required>
+                        <select class="formulario__select" name="docum" id="docum" required>
                             <option value="" selected="">** Seleccione Transversal **</option>
-
                         </select>
                     </div>
                 </div>
@@ -72,8 +71,6 @@
                     <div class="formulario__grupo-select">
                         <select class="formulario__select" name="id_com" id="id_com" required>
                             <option value="" selected="">** Seleccione Competencia **</option>
-
-
                         </select>
                     </div>
                 </div>
@@ -89,17 +86,12 @@
                         <option value="1">** 06:00 - 09:00 **</option>
                         <option value="2">** 09:00 - 11:30 **</option>
                         <option value="3">** 12:00 - 15:00 **</option>
-
                     </select>
                 </div>
 
             </div>
 
-
-
-
-
-            <div class="" id="">
+            <div class="formulario__mensaje" id="">
                 <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
                     correctamente. </p>
             </div>
@@ -108,7 +100,7 @@
 
             <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar">Enviar</button>
-                <p class="" id="">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje-exito" id="">Formulario enviado exitosamente!</p>
             </div>
 
 
