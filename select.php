@@ -34,7 +34,7 @@
 
                 <!-- div para capturar el nombre -->
 
-                <div class="" id="">
+                <div class="formulario" id="formulario">
                     <label for="trans" class="formulario__label">Transversal *</label>
                         <div class="formulario__grupo-select">
                             <select class="" name="trans" id="trans" required>
@@ -53,24 +53,24 @@
                 </div>
 
                                                     
-                <div class="" id="">
+                <div class="formulario" id="formulario">
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
                             <select class="" name="docum" id="docum" required>
-                                <option value="" selected="">** Seleccione Transversal **</option>
+                                <option value="" selected="">** Seleccione Instructor **</option>
                                 
                             </select>
                         </div>
                 </div>
-                </div>                  
+                </div>                 
                 <!-- Grupo: Contraseña 2 -->
-                <div class="formulario__grupo" id="">
+                <div class="formulario__grupo-input" id="">
                     <div class="conte" id="select3lista">
                         <label for="id_com" class="formulario__label">Competencia *</label>
                             <div class="formulario__grupo-select">
                                 <select class="formulario__select" name="id_com" id="id_com" required>
-                                    <option value="" selected="">** Seleccione Competencia **</option>
+                                    <option value="formulario_select" selected="">** Seleccione Competencia **</option>
                                     
 
                                 </select>
@@ -80,7 +80,7 @@
         
 
                 <!-- Grupo: Correo Electronico -->
-                <div class="formulario__grupo" id="grupo__correo">
+                <div class="formulario__grupo-input" id="grupo__correo">
                     <label for="correo" class="formulario__label">Horario *</label>
                     <div class="formulario__grupo-select">
                                 <select class="formulario__select" name="trans" id="trans" required>
@@ -104,7 +104,7 @@
             
             <p class="text-center">
                       
-            <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <div class="formulario__grupo-input formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
                 <p class="" id="">Formulario enviado exitosamente!</p>
             </div>
