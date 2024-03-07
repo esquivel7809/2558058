@@ -80,13 +80,23 @@
                 </div>
 
                 <div class="formulario__grupo" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Telefono *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="Telefono">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            El Telefono debe tener entre 7 a 14 numero</p>
+                </div>
+
+                <div class="formulario__grupo" id="grupo__telefono">
                     <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
 				    <div class="formulario__grupo-select">                 
                         <select  name="id_tip_use" id="id_tip_use" class="formulario__select" required>
                             <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
                                 <?php
                                    /*Consulta para mostrar las opciones en el select */
-                                    $statement = $con->prepare('SELECT * from tip_use WHERE id_tip_use = 1');
+                                    $statement = $con->prepare('SELECT * from tip_use');
                                     $statement->execute();
                                     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                                       echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
