@@ -17,24 +17,24 @@
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="formulario" id="">
+        <form  method="POST" autocomplete="off" class="formulario" id="formulario">
             
 
                 <!-- div para capturar el documento -->
 
-                <div class="formulario__grupo" id="">
+                <div class="formulario__grupo-input" id="formulario__grupo-input">
                     <label for="usuario" class="formulario__label">Ficha *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="formulario__mensaje">
+                        <p class="formulario__input-error">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
                 <!-- div para capturar el nombre -->
 
-                <div class="formulario__grupo" id="">
+                <div class="formulario__grupo-select" id="formulario__grupo-select">
                     <label for="trans" class="formulario__label">Transversal *</label>
                         <div class="formulario__grupo-select">
                             <select class="formulario__select" name="trans" id="trans" required>
@@ -53,7 +53,7 @@
                 </div>
 
                                                     
-                <div class="formulario_grupo" id="">
+                <div class="formulario__grupo" id="formulario__grupo">
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
@@ -65,9 +65,9 @@
                 </div>
                 </div>                  
                 <!-- Grupo: Contraseña 2 -->
-                <div class="formulario__grupo" id="">
+                <div class="formulario__grupo" id="formulario__grupo">
                     <div class="conte" id="select3lista">
-                        <label for="id_com" class="formulario__label">Competencia*</label>
+                        <label for="id_com" class="formulario__label">Competencia *</label>
                             <div class="formulario__grupo-select">
                                 <select class="formulario__select" name="id_com" id="id_com" required>
                                     <option value="" selected="">** Seleccione Competencia **</option>
@@ -94,15 +94,19 @@
                     
                 </div>
 
-			<div class="formulario_mensaje" id="">
-				<p class="formulario__mensaje"><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                
+                
+              
+
+			<div class="formulario__input-error" id="formulario__input-error">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
             <p class="text-center">
                       
             <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="formulario__mensaje" id="">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
                 
         
