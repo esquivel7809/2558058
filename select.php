@@ -98,7 +98,7 @@
 
             <p class="text-center">
 
-            <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <div class="formulario__grupo-correcto formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar">Enviar</button>
                 <p class="formulario__mensaje-exito" id="">Formulario enviado exitosamente!</p>
             </div>
