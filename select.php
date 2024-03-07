@@ -12,55 +12,45 @@
 	<title>Validación de Formulario con Javascript</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="../css/css.css">
+	<link rel="stylesheet" href="css/css.css">
 </head>
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="" id="">
+        <form  method="POST" autocomplete="off" class="formulario" id="">
             
 
                 <!-- div para capturar el documento -->
 
-                <div class="" id="">
-                    <label for="usuario" class="formulario__label">Ficha *</label>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                        <p class="">
-                            El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                <div class="formulario__grupo" id="grupo_ficha">
+                   <label for="ficha" class="formulario__label">Ficha *</label>
+                   <div class="formulario__grupo-input">
+                   <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
+                   <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
 
-                <!-- div para capturar el nombre -->
+               <p class="formulario__input-error">El documento tiene que ser de 6 a 11 dígitos y solo puede contener números.</p>
+</div>
 
-                <div class="" id="">
-                    <label for="trans" class="formulario__label">Transversal *</label>
-                        <div class="formulario__grupo-select">
-                            <select class="" name="trans" id="trans" required>
-                                <option value="" selected="">** Seleccione Transversal **</option>
-                                    <?php
-                                        /*Consulta para mostrar las opciones en el select */
-                                        $statement = $con->prepare('SELECT * FROM transversal');
-                                        $statement->execute();
-                                        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                                          echo "<option value=" . $row['id_transv'] . ">"  . $row['transversal'] . "</option>";
-                                        }
-                                    ?>
-                            </select>
-                        </div>
-                        
+                <div class="formulario__grupo" id="grupo_trans">
+                    <label for="trans" class="formulario__label">Transversal </label>
+                    <div class="formulario__grupo-select">
+                        <select class="formulario__select" name="trans" id="trans" required>
+                            <option value="" selected="">** Seleccione Transversal **</option>
+                            <!-- Opciones generadas dinámicamente desde PHP -->
+                        </select>
+                    </div>
                 </div>
 
-                                                    
-                <div class="" id="">
-                <div class="conte" id="select2lista">
+                <div class="formulario__grupo" id="grupo_docum">
                     <label for="docum" class="formulario__label">Instructor *</label>
-                        <div class="formulario__grupo-select">
-                            <select class="" name="docum" id="docum" required>
-                                <option value="" selected="">** Seleccione Transversal **</option>
-                                
-                            </select>
+                    <div class="formulario__grupo-select">
+                        <select class="formulario__select" name="docum" id="docum" required>
+                            <option value="" selected="">** Seleccione Transversal **</option>
+                            <!-- Opciones generadas dinámicamente desde JavaScript -->
+                        </select>
+                    </div>
+                </div>
                         </div>
                 </div>
                 </div>                  
@@ -71,8 +61,7 @@
                             <div class="formulario__grupo-select">
                                 <select class="formulario__select" name="id_com" id="id_com" required>
                                     <option value="" selected="">** Seleccione Competencia **</option>
-                                    
-
+                    
                                 </select>
                             </div>
                     </div>
@@ -98,7 +87,7 @@
                 
               
 
-			<div class="" id="">
+                <div class="formulario__mensaje" id="">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
@@ -106,7 +95,7 @@
                       
             <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="" id="">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje" id="">Formulario enviado exitosamente!</p>
             </div>
                 
         
