@@ -12,23 +12,23 @@
 	<title>Validación de Formulario con Javascript</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="../css/css.css">
+	<link rel="stylesheet" href="css/css.css">
 </head>
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="" id="">
+        <form  method="POST" autocomplete="off" class="formulario" id="formulario">
             
 
                 <!-- div para capturar el documento -->
 
-                <div class="" id="">
+                <div class="formulario__grupo-input" id="formulario__grupo-input">
                     <label for="usuario" class="formulario__label">Ficha *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="">
+                        <p class="formulario__input-error">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
@@ -53,7 +53,7 @@
                 </div>
 
                                                     
-                <div class="" id="">
+                <div class="formulario__grupo-select" id="formulario__grupo-select">
                 <div class="conte" id="select2lista">
                     <label for="docum" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
@@ -98,7 +98,7 @@
                 
               
 
-			<div class="" id="">
+			<div class="formulario__input-error" id="formulario__input-error">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
@@ -106,7 +106,7 @@
                       
             <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="" id="">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
                 
         
