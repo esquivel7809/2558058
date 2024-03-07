@@ -68,6 +68,17 @@
                     <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                 </div>
         
+            <!-- Grupo: Prueba -->
+                
+                <div class="formulario__grupo" id="grupo__prueba">
+                    <label for="prueba" class="formulario__label">Prueba</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="prueba" id="prueba" placeholder="*Input Prueba*">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                </div>
 
                 <!-- Grupo: Correo Electronico -->
                 <div class="formulario__grupo" id="grupo__correo">
@@ -96,6 +107,7 @@
                     </div>
                     
                 </div>  
+
 
                 
                 <!-- Grupo: Terminos y Condiciones -->

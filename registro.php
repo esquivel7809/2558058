@@ -6,11 +6,13 @@
 ?>
 <?php
     $usu = $_POST['doc'];
+    $prueba =$POST['prueba'];
     $nom = $_POST['nom'];
     $pas = $_POST['pas'];
     $email = $_POST['email'];
     $tip_usu = $_POST['tip_usu'];
     echo $usu;
+    echo $prueba;
     echo $nom;
     echo $pas;
     echo $email;
