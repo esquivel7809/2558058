@@ -2,20 +2,20 @@
     $conexion=mysqli_connect('localhost','root','','login');
  
 
-    $trans=$_POST['trans'];
+    $trans=$_POST['id_transv'];
 /*****************************************  CONSULTA DE LOS DATOS ***************************************/
 
 
     $sql="SELECT user.doc, user.name FROM asig_transv 
-    INNER JOIN user ON asig_transv.doc_trans = user.doc 
+    INNER JOIN user ON asig_transv.doc_trans = user.doc
     INNER JOIN transversal ON asig_transv.id_transv = transversal.id_transv 
-    WHERE user.id_tip_user = 3 
+    WHERE user.id_tip_user = 1 
     AND transversal.id_transv = '$trans'
     ORDER BY transversal.transversal ";
 
     $result=mysqli_query($conexion,$sql);
 	$cadena="<label>Instructor</label><br> 
-			<select id='docu' name='name'>";
+			<select id='doc' name='name'>";
 
 	while ($ver=mysqli_fetch_row($result)) {
 		$cadena=$cadena.'<option value='.$ver[0].'>'.utf8_encode($ver[1]).'</option>';

@@ -17,7 +17,7 @@
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="formulario" id="">
+        <form  method="POST" autocomplete="off" class="formulario" id="formulario">
             
 
                 <!-- div para capturar el documento -->
@@ -28,7 +28,7 @@
                             <input type="text" class="formulario__input" name="ficha" id="ficha" placeholder="Ficha">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="formulario__label">
+                        <p class="formulario__mensaje">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
@@ -55,18 +55,11 @@
                                                     
                 <div class="formulario__grupo-input" id="formulario">
                 <div class="conte" id="select2lista">
-                    <label for="docum" class="formulario__label">Instructor *</label>
+                    <label for="doc" class="formulario__label">Instructor *</label>
                         <div class="formulario__grupo-select">
                             <select class="formulario__select" name="doc" id="doc" required>
-                                <option value="" selected="">** Seleccione Instructor **</option>
-                                <?php
-                                        /*Consulta para mostrar las opciones en el select */
-                                        $statement = $con->prepare('SELECT * FROM user');
-                                        $statement->execute();
-                                        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                                          echo "<option value=" . $row['doc'] . ">"  . $row['name'] . "</option>";
-                                        }
-                                    ?>
+                                <option value="doc" selected="">** Seleccione Instructor **</option>
+                                
                             </select>
                         </div>
                 </div>
@@ -76,18 +69,9 @@
                     <div class="conte" id="select3lista">
                         <label for="id_com" class="formulario__label">Competencia *</label>
                             <div class="formulario__grupo-select">
-                                <select class="formulario__select" name="id_com" id="id_com" required>
-                                    <option value="formulario_select" selected="">** Seleccione Competencia **</option>
-                                    <?php
-                                        /*Consulta para mostrar las opciones en el select */
-                                        $statement = $con->prepare('SELECT competencia.id_compe, competencia.competencia FROM competencia INNER JOIN transversal ON transversal.id_transv = competencia.id_transv WHERE competencia.id_transv = "id_transv" ORDER BY competencia.competencia');
-                                        $statement->execute();
-                                        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                                          echo "<option value=" . $row['id_transv'] . ">"  . $row['competencia'] . "</option>";
-                                        }
-                                        
-                                    ?>    
-
+                                <select class="formulario__select" name="id_compe" id="id_compe" required>
+                                    <option value="id_compe" selected="">** Seleccione Competencia **</option>
+                                   
                                 </select>
                             </div>
                     </div>
@@ -134,7 +118,7 @@
     <!--  Javascript para buscar el instructor a partir de la transversal -->
 
     <script type="text/javascript">
-	$(document).ready(function(){
+	$(doc).ready(function(){
 		$('#trans').val(0);
 		recargarLista();
 
@@ -150,7 +134,7 @@
 			url:"datos.php",
 			data:"trans=" + $('#trans').val(),
 			success:function(r){
-				$('#docum').html(r);
+				$('#doc').html(r);
 			}
 		});
 	}
@@ -158,7 +142,7 @@
 
 <!-- este script nos muestra la competencia de acuerdo a la transversal -->
 <script type="text/javascript">
-	$(doc).ready(function(){
+	$('id_compe').ready(function(){
 		$('#trans').val(0);
 		recargarLista1();
 
@@ -174,7 +158,7 @@
 			url:"datos1.php",
 			data:"trans=" + $('#trans').val(),
 			success:function(r){
-				$('#id_com').html(r);
+				$('#id_compe').html(r);
 			}
 		});
 	}

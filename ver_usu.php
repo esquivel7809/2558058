@@ -21,6 +21,8 @@
                 $i = 0;          
             ?>
 
+           
+
             <table border="1">
                 <tr>
                     <td>#</td>
@@ -34,27 +36,43 @@
                 </tr>
                 <?php foreach ($resultado1 as $row)
                 { 
-                    $i++; ?>
+                    $i++; 
+
+                    if ($row['estado']==1)
+                    {
+                        $estado = "Activo";
+                    }
+                    else
+                    {
+                        $estado = "Inactivo";
+                    }
                     
-                    <tr>
+                    ?>
+
+                    <?php
+                if ($estado == "Activo" )
+                {
+                    ?>
+                    
+                    <tr style="background-color:salmon">
                     <td><?php echo $i?></td>
                     <td><?php echo $row['doc'] ?></td>
                     <td><?php echo $row['name'] ?></td>
                     <td><?php echo $row['email'] ?></td>
                     <td><?php echo $row['tip_use'] ?></td>
-                    <td><?php echo $row['estado'] ?></td>
+                    <td><?php echo $estado ?></td>
 
 
 
                     <td>
                         <a href="" onClick="window.open
-                        ('eliminar.php?cod=<?php echo $row['doc'] ?>','width= 830,height=750,toolbar=NO');void(null);"><img src="img/eliminar.png" height="24" width="24"></a>
+                        ('eliminar.php?cod=<?php echo $row['doc'] ?>','width= 830,height=750,toolbar=NO');void(null);"><img src="../img/eliminar.png" height="24" width="24"></a>
                     </td>
 
 
                     
                     <td>
-                        <a href="#"><img src="img/editar.png" width="25px" height="5%">
+                        <a href="#"><img src="../img/editar.png" width="25px" height="5%">
                         </a>
                     </td>
                     <td>
@@ -64,8 +82,18 @@
                     </td>
                 </tr>
 
-                
-                <?php }?>
+                    <?php
+                     }else{ ?>
+                     <tr>
+                    <td><?php echo $i?></td>
+                    <td><?php echo $row['doc'] ?></td>
+                    <td><?php echo $row['name'] ?></td>
+                    <td><?php echo $row['email'] ?></td>
+                    <td><?php echo $row['tip_use'] ?></td>
+                    <td><?php echo $estado ?></td>
+                </tr>
+                    <?php }} ?>
+            
             </table>
 </body>
 </html>

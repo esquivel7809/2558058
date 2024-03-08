@@ -2,7 +2,7 @@
     $conexion=mysqli_connect('localhost','root','','login');
  
 
-    $trans=$_POST['trans'];
+    $trans=$_POST['id_transv'];
 /*****************************************  CONSULTA DE LOS DATOS ***************************************/
 
 
