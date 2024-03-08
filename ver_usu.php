@@ -32,40 +32,49 @@
                     <td>Eliminar</td>
                     <td>Editar</td>
                 </tr>
-                <?php foreach ($resultado1 as $row)
-                { 
+                <?php foreach ($resultado1 as $row){ 
+                    
                     $i++; ?>
+
+                    <?php
+                        if($row['estado'] == 'A'){
+                            $estado = 'Activo';
+                        } 
+                        else{
+                            $estado = 'Inactivo';
+                        }
+                    ?>
                     
-                    <tr>
-                    <td><?php echo $i?></td>
-                    <td><?php echo $row['doc'] ?></td>
-                    <td><?php echo $row['name'] ?></td>
-                    <td><?php echo $row['email'] ?></td>
-                    <td><?php echo $row['tip_use'] ?></td>
-                    <td><?php echo $row['estado'] ?></td>
-
-
-
-                    <td>
-                        <a href="" onClick="window.open
-                        ('eliminar.php?cod=<?php echo $row['doc'] ?>','width= 830,height=750,toolbar=NO');void(null);"><img src="img/eliminar.png" height="24" width="24"></a>
-                    </td>
-
-
-                    
-                    <td>
-                        <a href="#"><img src="img/editar.png" width="25px" height="5%">
-                        </a>
-                    </td>
-                    <td>
-                    <div class="col-4">
-                        <a href="" class="text-danger" onclick="window.open('selects/comunicaciones.php?id=<?php echo '3'?>','','width= 1200,height=880');void(null);"><strong>  Comunicaciones</strong></a>
-                    </div> 
-                    </td>
-                </tr>
-
+                    <?php 
+                        if ($estado == "Activo"){
+                     ?>
+                        <tr style="background-color:salmon;  font-family: segoe ui; font-size:20px;">
+                            <td><?php echo $i?></td>
+                            <td><?php echo $row['doc'] ?></td>
+                            <td><?php echo $row['name'] ?></td>
+                            <td><?php echo $row['email'] ?></td>
+                            <td><?php echo $row['id_tip_user'] ?></td>
+                            <td><?php echo $estado ?></td>
+                            <td> 
+                                <a href="" onClick="window.open
+                                ('eliminar.php?cod=<?php echo $row['doc'] ?>','width= 830,height=750,toolbar=NO');void(null);"><img src="img/eliminar.png" height="24" width="24"></a>
+                            </td>                    
+                            <td>
+                                <a href="#"><img src="img/editar.png" width="25px" height="5%">
+                                </a>
+                            </td>
+                        </tr>
+                        <?php } else {?>
+                            <tr style="background-color:purple; font-family: segoe ui; font-size:20px;">
+                            <td><?php echo $i?></td>
+                            <td><?php echo $row['doc'] ?></td>
+                            <td><?php echo $row['name'] ?></td>
+                            <td><?php echo $row['email'] ?></td>
+                            <td><?php echo $row['id_tip_user'] ?></td>
+                            <td><?php echo $estado ?></td>
+                            <td> 
                 
-                <?php }?>
+                <?php }}?>
             </table>
 </body>
 </html>
