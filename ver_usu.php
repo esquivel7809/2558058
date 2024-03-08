@@ -15,11 +15,12 @@
 <body>
     <h1>lista de usuarios de la tabla</h1>
             <?php
-                $insert = $con->prepare('SELECT * FROM user LEFT JOIN tip_use ON user.id_tip_user = tip_use.id_tip_use');
+                $insert = $con->prepare('SELECT * FROM user LEFT JOIN tip_use ON user.id_tip_user = tip_use.id_tip_use ORDER BY estado');
                 $insert->execute();
                 $resultado1 = $insert->fetchAll(PDO::FETCH_ASSOC);  
                 $i = 0;          
             ?>
+
 
             <table border="1">
                 <tr>
@@ -34,15 +35,27 @@
                 </tr>
                 <?php foreach ($resultado1 as $row)
                 { 
-                    $i++; ?>
+
+                    $i++; ?> 
+                    <?php 
+                        if ($row["estado"] == 1){
+                        $estado = "Activo";
+                    }
+                    else{
+                        $estado = "Inactivo";
+                    }
+            ?>      
+                    <?php
+                    if ($estado == "Activo"){
+                    ?>
                     
-                    <tr>
+                    <tr style="background-color:pink;">
                     <td><?php echo $i?></td>
                     <td><?php echo $row['doc'] ?></td>
                     <td><?php echo $row['name'] ?></td>
                     <td><?php echo $row['email'] ?></td>
                     <td><?php echo $row['tip_use'] ?></td>
-                    <td><?php echo $row['estado'] ?></td>
+                    <td><?php echo $estado ?></td>
 
 
 
@@ -57,15 +70,31 @@
                         <a href="#"><img src="img/editar.png" width="25px" height="5%">
                         </a>
                     </td>
-                    <td>
-                    <div class="col-4">
-                        <a href="" class="text-danger" onclick="window.open('selects/comunicaciones.php?id=<?php echo '3'?>','','width= 1200,height=880');void(null);"><strong>  Comunicaciones</strong></a>
-                    </div> 
-                    </td>
+            
                 </tr>
+                <?php }else{
+                    ?>
+                    <tr style="background-color:gray;">
+                    <td><?php echo $i?></td>
+                    <td><?php echo $row['doc'] ?></td>
+                    <td><?php echo $row['name'] ?></td>
+                    <td><?php echo $row['email'] ?></td>
+                    <td><?php echo $row['tip_use'] ?></td>
+                    <td><?php echo $estado ?></td>
 
-                
-                <?php }?>
+
+
+                    <td>
+                    </td>
+
+
+                    
+                    <td>
+
+                    </td>
+
+                </tr>
+                <?php }}?>
             </table>
 </body>
 </html>
