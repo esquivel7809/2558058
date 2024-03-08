@@ -35,16 +35,24 @@
                 <?php foreach ($resultado1 as $row)
                 { 
                     $i++; ?>
-                    
-                    <tr>
+                    <?php
+                if ($row['estado']  ==1){
+                    $estado = "Activo";
+                }
+                else{
+                    $estado = "Inactivo";
+                }
+                ?>
+                <?php
+                if ($estado == "Activo"){
+                ?>
+                    <tr style="background-color:salmon">
                     <td><?php echo $i?></td>
                     <td><?php echo $row['doc'] ?></td>
                     <td><?php echo $row['name'] ?></td>
                     <td><?php echo $row['email'] ?></td>
                     <td><?php echo $row['tip_use'] ?></td>
-                    <td><?php echo $row['estado'] ?></td>
-
-
+                    <td><?php echo $estado ?></td>
 
                     <td>
                         <a href="" onClick="window.open
@@ -64,8 +72,24 @@
                     </td>
                 </tr>
 
+                <?php
+                }else{
+                ?>
+                <tr>
+                    <td><?php echo $i?></td>
+                    <td><?php echo $row['doc'] ?></td>
+                    <td><?php echo $row['name'] ?></td>
+                    <td><?php echo $row['email'] ?></td>
+                    <td><?php echo $row['tip_use'] ?></td>
+                    <td><?php echo $estado ?></td>
+
                 
-                <?php }?>
+                </tr>
+
+                
+
+                
+                <?php }}?>
             </table>
 </body>
 </html>
