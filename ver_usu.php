@@ -21,6 +21,8 @@
                 $i = 0;          
             ?>
 
+            
+
             <table border="1">
                 <tr>
                     <td>#</td>
@@ -35,14 +37,30 @@
                 <?php foreach ($resultado1 as $row)
                 { 
                     $i++; ?>
-                    
-                    <tr>
+                <?php
+            if($row['estado'] == 1){
+                $estado = "Activo";
+
+            }
+            else{
+                $estado = "inactivo";
+            }
+            
+
+
+
+            ?>   
+            <?php
+               if ($estado == "Activo"){
+
+            ?>
+                    <tr style="background-color:salmon">
                     <td><?php echo $i?></td>
                     <td><?php echo $row['doc'] ?></td>
                     <td><?php echo $row['name'] ?></td>
                     <td><?php echo $row['email'] ?></td>
                     <td><?php echo $row['tip_use'] ?></td>
-                    <td><?php echo $row['estado'] ?></td>
+                    <td><?php echo $estado ?></td>
 
 
 
@@ -57,15 +75,33 @@
                         <a href="#"><img src="img/editar.png" width="25px" height="5%">
                         </a>
                     </td>
-                    <td>
-                    <div class="col-4">
-                        <a href="" class="text-danger" onclick="window.open('selects/comunicaciones.php?id=<?php echo '3'?>','','width= 1200,height=880');void(null);"><strong>  Comunicaciones</strong></a>
-                    </div> 
-                    </td>
+                   
+                </tr>
+                <?php
+                  }else{
+
+                
+                ?>
+                <tr>
+                    <td><?php echo $i?></td>
+                    <td><?php echo $row['doc'] ?></td>
+                    <td><?php echo $row['name'] ?></td>
+                    <td><?php echo $row['email'] ?></td>
+                    <td><?php echo $row['tip_use'] ?></td>
+                    <td><?php echo $estado ?></td>
+
+
+
+                    
+
+
+                    
+                   
+                    
                 </tr>
 
                 
-                <?php }?>
+                <?php }}?>
             </table>
 </body>
 </html>

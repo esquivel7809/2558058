@@ -79,6 +79,15 @@
                     <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
+                <div class="formulario__grupo" id="grupo__direccion">
+                   <label for="direccion" class="formulario__label">Dirección *</label>
+                   <div class="formulario__grupo-input">
+                       <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Dirección">
+                   <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Por favor ingrese una dirección válida.</p>
+</div>
+
                 <div class="formulario__grupo" id="grupo__telefono">
                     <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
 				    <div class="formulario__grupo-select">                 
