@@ -96,6 +96,15 @@
                     </div>
                     
                 </div>
+                <div class="formulario__grupo" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">numero de celular *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="int" class="formulario__input" name="telefono" id="telefono" placeholder="telefono">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            El numero tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                </div>
 
                 
                 <!-- Grupo: Terminos y Condiciones -->
@@ -115,6 +124,7 @@
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
+
                 
         
         </form>

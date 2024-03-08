@@ -17,9 +17,12 @@
             <?php
                 $insert = $con->prepare('SELECT * FROM user LEFT JOIN tip_use ON user.id_tip_user = tip_use.id_tip_use');
                 $insert->execute();
-                $resultado1 = $insert->fetchAll(PDO::FETCH_ASSOC);  
-                $i = 0;          
+                $resultado1 = $insert->fetchAll(PDO::FETCH_ASSOC);
+                $i = 0;
+
             ?>
+            
+            
 
             <table border="1">
                 <tr>
@@ -32,21 +35,28 @@
                     <td>Eliminar</td>
                     <td>Editar</td>
                 </tr>
-                <?php foreach ($resultado1 as $row)
-                { 
-                    $i++; ?>
+                <?php foreach ($resultado1 as $row){
+                    if($row['estado'] == 'A'){
+                        $estado = 'activo';
+                    }
+                    else{
+                        $estado = 'inactivo';
+                    }
                     
-                    <tr>
-                    <td><?php echo $i?></td>
-                    <td><?php echo $row['doc'] ?></td>
-                    <td><?php echo $row['name'] ?></td>
-                    <td><?php echo $row['email'] ?></td>
-                    <td><?php echo $row['tip_use'] ?></td>
-                    <td><?php echo $row['estado'] ?></td>
-
-
-
-                    <td>
+                    $i++;
+                    if($estado == 'activo'){
+                        
+                    ?>
+                    
+                    <tr style="background-color: blue;">
+                        <td><?php echo $i?></td>
+                        <td><?php echo $row['doc'] ?></td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['email'] ?></td>
+                        <td><?php echo $row['tip_use'] ?></td>
+                        <td><?php echo $estado ?></td>
+                    
+                        <td>
                         <a href="" onClick="window.open
                         ('eliminar.php?cod=<?php echo $row['doc'] ?>','width= 830,height=750,toolbar=NO');void(null);"><img src="img/eliminar.png" height="24" width="24"></a>
                     </td>
@@ -60,12 +70,30 @@
                     <td>
                     <div class="col-4">
                         <a href="" class="text-danger" onclick="window.open('selects/comunicaciones.php?id=<?php echo '3'?>','','width= 1200,height=880');void(null);"><strong>  Comunicaciones</strong></a>
-                    </div> 
+                    </div>
                     </td>
                 </tr>
 
+                    <?php
+                    }else{
+                    
+                    ?>
+                    
+                    <tr style="background-color: red;">
+                        <td><?php echo $i?></td>
+                        <td><?php echo $row['doc'] ?></td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['email'] ?></td>
+                        <td><?php echo $row['tip_use'] ?></td>
+                        <td><?php echo $estado ?></td>
+                    
+                    
+
+                <?php
+                    }
+                }
+                ?>
                 
-                <?php }?>
             </table>
 </body>
 </html>
