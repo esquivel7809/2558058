@@ -6,15 +6,13 @@
 /*****************************************  CONSULTA DE LOS DATOS ***************************************/
 
 
-    $sql="SELECT user.doc, user.name FROM asig_transv 
-    INNER JOIN user ON asig_transv.doc_trans = user.doc 
-    INNER JOIN transversal ON asig_transv.id_transv = transversal.id_transv 
-    WHERE user.id_tip_user = 1 
-    AND transversal.id_transv = '$trans'
-    ORDER BY transversal.transversal ";
+    $sql="SELECT animal.id_ani, animal.animal FROM animal 
+    INNER JOIN especie ON animal.id_esp = especie.id_esp 
+    WHERE especie.id_esp = '$trans'
+    ORDER BY especie.especie ";
 
     $result=mysqli_query($conexion,$sql);
-	$cadena="<label>Animal</label><br> 
+	$cadena="<label>Instructor</label><br> 
 			<select id='docu' name='name'>";
 
 	while ($ver=mysqli_fetch_row($result)) {
